@@ -1,6 +1,6 @@
 import winston from 'winston';
 
-import env from './env.js';
+import { env } from './env.js';
 
 const logFormat = winston.format.combine(
     winston.format.timestamp(),
@@ -15,7 +15,7 @@ export const logger = winston.createLogger({
     format: logFormat,
     transports: [
         new winston.transports.File({
-            filename: "/logs/error.log",
+            filename: "logs/error.log",
             level: "error"
         }),
         new winston.transports.File({

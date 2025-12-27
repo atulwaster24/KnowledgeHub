@@ -12,8 +12,8 @@ app.get('/health', (req, res) => {
     res.json({ status: 'ok' });
 });
 
-app.get("/error-test", () => {
-    throw new AppError("Deliberate Error for testing", 400, false);
+app.get("/error-test", (req, res, next) => {
+    next(new AppError("Deliberate Error for testing", 400, true));
 });
 
 app.use(errorHandler);
