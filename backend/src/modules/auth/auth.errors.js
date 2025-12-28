@@ -12,3 +12,10 @@ export class UsernameAlreadyExistsError extends AppError {
         super("Username already in use", 409);
     }
 }
+
+
+export class InvalidCredentialsError extends AppError {
+    constructor() {
+        super("Invalid email or password", 401);
+    }
+};

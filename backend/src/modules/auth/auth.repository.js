@@ -12,3 +12,7 @@ export const findUserByUsername = (username) => {
 export const createUser = (data) => {
     return prisma.user.create({data});
 }
+
+export const createRefreshToken = (data) => {
+    return prisma.refreshToken.create({data});
+};
