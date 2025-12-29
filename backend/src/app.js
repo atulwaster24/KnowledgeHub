@@ -1,4 +1,5 @@
 import express from 'express';
+import cookieParser from 'cookie-parser';
 import { requestLogger } from './shared/middlewares/requestLogger.js';
 import { errorHandler } from './shared/middlewares/errorHandler.js';
 import { AppError } from './shared/errors/AppError.js';
@@ -8,6 +9,7 @@ import authRoutes from "./modules/auth/auth.routes.js";
 const app = express();
 
 app.use(express.json());
+app.use(cookieParser());
 app.use(requestLogger);
 app.use("/auth", authRoutes);
 
