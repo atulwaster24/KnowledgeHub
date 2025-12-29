@@ -1,11 +1,15 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import { env } from "../../config/env.js";
 
 import {
   findUserByEmail,
   findUserByUsername,
   createUser,
   createRefreshToken,
+  findRefreshToken,
+  revokeRefreshToken,
+  revokeAllUserTokens,
 } from "./auth.repository.js";
 
 import {
@@ -76,6 +80,53 @@ export const loginUser = async ({ email, password }) => {
   logger.info(`Login successful for user with email ${email}`);
 
   return {
-    accessToken, refreshToken
+    accessToken,
+    refreshToken,
+  };
+};
+
+export const refreshSession = async (token) => {
+  const storedToken = await findRefreshToken(token);
+
+  if (!storedToken || storedToken.revoked) {
+    logger.warn("Refresh attempt with invalid token");
+    throw new InvalidCredentialsError();
   }
+
+  let payload;
+
+  try {
+    payload = jwt.verify(token, env.JWT_REFRESH_SECRET);
+  } catch {
+    logger.warn("Refresh token verification failed.");
+    throw new InvalidCredentialsError();
+  }
+
+  await revokeRefreshToken(storedToken.id);
+
+  const newAccessToken = signAccessToken({
+    sub: payload.sub,
+  });
+
+  const newRefreshToken = signRefreshToken({
+    sub: payload.sub,
+  });
+
+  await createRefreshToken({
+    token: newAccessToken,
+    userId: payload.sub,
+    expiresAt: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
+  });
+
+  logger.info("Refresh token for user with id " + payload.sub + " rotated.");
+
+  return {
+    accessToken: newAccessToken,
+    refreshToken: newRefreshToken,
+  };
+};
+
+export const logoutUser = async (userId) => {
+  await revokeAllUserTokens(userId);
+  logger.info("User with id " + userId + " logged out.");
 };
