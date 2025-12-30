@@ -13,6 +13,8 @@ datasource db {
   provider = "postgresql"
 }
 
+// USER MODELS
+
 enum Role {
   USER
   ADMIN
@@ -29,6 +31,12 @@ model User {
   bio       String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  // Collections this user owns
+  collections Collection[]
+
+  // Collections shared with this user
+  sharedCollections CollectionShare[]
 
   refreshTokens RefreshToken[]
   sentRequests FriendRequest[] @relation("Requester")
@@ -66,4 +74,50 @@ model FriendRequest {
   updatedAt   DateTime @updatedAt
 
   @@unique([requesterId, receiverId])
+}
+
+
+// Content Model
+
+enum AccessLevel {
+  READ
+  WRITE
+}
+
+model Collection {
+  id String @id @default(uuid())
+  name String
+  description String?
+
+  ownerId String
+  owner User @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+
+  documents Document[]
+  shares CollectionShare[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Document {
+  id String @id @default(uuid())
+  title String
+  description String?
+  fileKey String //future s3/storageKey 
+  collectionId String
+  collection Collection @relation(fields: [collectionId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+}
+
+model CollectionShare {
+  id String @id @default(uuid())
+  collectionId String
+  userId String
+  access AccessLevel @default(READ)
+
+  collection Collection @relation(fields: [collectionId], references: [id], onDelete: Cascade)
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([collectionId, userId])
 }
