@@ -6,6 +6,7 @@ import { AppError } from './shared/errors/AppError.js';
 import prisma from './shared/db/prisma.js';
 import authRoutes from "./modules/auth/auth.routes.js";
 import userRoutes from "./modules/users/user.routes.js";
+import friendRoutes from "./modules/friends/friend.routes.js";
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.use(cookieParser());
 app.use(requestLogger);
 app.use("/auth", authRoutes);
 app.use("/users", userRoutes);
+app.use("/friends", friendRoutes)
 
 app.get('/health', (req, res) => {
     res.json({ status: 'ok' });

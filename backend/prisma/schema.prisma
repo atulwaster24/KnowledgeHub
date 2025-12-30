@@ -31,6 +31,8 @@ model User {
   updatedAt DateTime @updatedAt
 
   refreshTokens RefreshToken[]
+  sentRequests FriendRequest[] @relation("Requester")
+  receivedRequests FriendRequest[] @relation("Receiver")
 }
 
 
@@ -42,4 +44,26 @@ model RefreshToken {
   expiresAt DateTime
   revoked   Boolean  @default(false)
   createdAt DateTime @default(now())
+}
+
+
+enum FriendStatus {
+  PENDING
+  ACCEPTED
+  REJECTED
+}
+
+model FriendRequest {
+  id          String       @id @default(uuid())
+  requesterId String
+  receiverId  String
+  status      FriendStatus @default(PENDING)
+
+  requester   User @relation("Requester", fields: [requesterId], references: [id], onDelete: Cascade)
+  receiver    User @relation("Receiver", fields: [receiverId], references: [id], onDelete: Cascade)
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@unique([requesterId, receiverId])
 }
