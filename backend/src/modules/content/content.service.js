@@ -12,6 +12,7 @@ import {
 import { logger } from "../../config/logger.js";
 import { AppError } from "../../shared/errors/AppError.js";
 import { supabase } from "../../shared/storage/supabase.js";
+import { enqueuePdfProcessing } from "../../jobs/worker.js";
 
 const hasAccess = (collection, userId) => {
   if (collection.ownerId === userId) return "OWNER";
@@ -80,11 +81,18 @@ export const uploadDocument = async (
     throw new AppError("Forbidden", 403);
   }
 
-  return createDocument(collectionId, {
+  const doc = await createDocument(collectionId, {
     title,
     description,
     fileKey,
   });
+
+  enqueuePdfProcessing({
+    documentId: doc.id,
+    fileKey: doc.fileKey
+  })
+
+  return doc;
 };
 
 const SIGNED_URL_TTL = 60 * 5;

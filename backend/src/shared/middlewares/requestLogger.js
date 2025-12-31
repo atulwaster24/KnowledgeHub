@@ -11,6 +11,8 @@ export const requestLogger = (req, res, next) => {
             time: new Date().toISOString(),
             durationMs: Date.now() - start
         })
+
+        logger.child({correlationId: req.correlationId});
     })
     next();
 }

@@ -54,12 +54,12 @@ export const streamPdfUpload = (req) =>
 
       fileKey = `pdfs/${uuid()}.pdf`;
 
-      if(process.env.SUPABASE_BUCKET){
+      if(!env.SUPABASE_BUCKET){
         throw new Error("SUPABASE_BUCKET not configured correctly.");
       }
 
       uploadPromise = supabase.storage
-        .from(process.env.SUPABASE_BUCKET)
+        .from(env.SUPABASE_BUCKET)
         .upload(fileKey, file, {
           contentType: mimeType,
           upsert: false,
@@ -79,7 +79,7 @@ export const streamPdfUpload = (req) =>
 
       if (error) {
         logger.error("Supabase storage upload failed", {
-          bucket: process.env.SUPABASE_BUCKET,
+          bucket: env.SUPABASE_BUCKET,
           fileKey,
           supabaseError: error,
         });
