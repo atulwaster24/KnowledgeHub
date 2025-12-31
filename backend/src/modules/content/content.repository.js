@@ -58,3 +58,16 @@ export const createDocument = (collectionId, data) => {
     data: { ...data, collectionId },
   });
 };
+
+export const getDocumentWithCollection = (documentId) => {
+  return prisma.document.findUnique({
+    where: { id: documentId },
+    include: {
+      collection: {
+        include: {
+          shares: true,
+        },
+      },
+    },
+  });
+};

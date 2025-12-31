@@ -6,9 +6,12 @@ import {
   listDocuments,
   upsertShare,
   createDocument,
+  getDocumentWithCollection,
 } from "./content.repository.js";
 
+import { logger } from "../../config/logger.js";
 import { AppError } from "../../shared/errors/AppError.js";
+import { supabase } from "../../shared/storage/supabase.js";
 
 const hasAccess = (collection, userId) => {
   if (collection.ownerId === userId) return "OWNER";
@@ -82,4 +85,40 @@ export const uploadDocument = async (
     description,
     fileKey,
   });
+};
+
+const SIGNED_URL_TTL = 60 * 5;
+
+export const getSignedDocumentUrl = async (documentId, userId) => {
+  const doc = await getDocumentWithCollection(documentId);
+
+  if (!doc) throw new AppError("Document not found", 404);
+
+  const { collection } = doc;
+
+  const isOwner = collection.ownerId === userId;
+  const share = collection.shares.find((s) => s.userId === userId);
+
+  if (!isOwner && share?.access !== "READ")
+    throw new AppError("Forbidden", 403);
+
+  const { data, error } = await supabase.storage
+    .from(process.env.SUPABASE_BUCKET)
+    .createSignedUrl(doc.fileKey, SIGNED_URL_TTL);
+
+  if (error) {
+    logger.error(
+      "Signed URL generation error for document: ",
+      error
+    )
+    throw new AppError(
+      "Failed to generate download link, please try again",
+      500
+    );
+  }
+
+  return {
+    url: data.signedUrl,
+    expiresIn: SIGNED_URL_TTL,
+  };
 };

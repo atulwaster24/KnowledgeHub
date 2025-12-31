@@ -7,6 +7,7 @@ import {
   viewDocuments,
   shareWithFriend,
   uploadDocument,
+  getSignedDocumentUrl,
 } from "./content.service.js";
 
 export const createCollection = async (req, res, next) => {
@@ -64,7 +65,8 @@ export const uploadPdf = async (req, res, next) => {
   try {
     const result = await streamPdfUpload(req);
 
-    if(!result || !result.fileKey) throw new AppError("File upload failed", 500);
+    if (!result || !result.fileKey)
+      throw new AppError("File upload failed", 500);
 
     const { fileKey, fields } = result;
 
@@ -79,6 +81,19 @@ export const uploadPdf = async (req, res, next) => {
     });
 
     res.status(201).json({ success: true, data: doc });
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const downloadDocument = async (req, res, next) => {
+  try {
+    const result = await getSignedDocumentUrl(req.params.id, req.user.id);
+
+    res.json({
+      success: true,
+      data: result,
+    });
   } catch (error) {
     next(error);
   }
