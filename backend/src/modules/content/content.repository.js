@@ -39,17 +39,22 @@ export const upsertShare = (collectionId, userId, access) => {
     where: {
       collectionId_userId: {
         collectionId,
-        userId
-      }
+        userId,
+      },
     },
     update: {
-      access
+      access,
     },
     create: {
       collectionId,
       userId,
-      access
-    }
+      access,
+    },
   });
 };
 
+export const createDocument = (collectionId, data) => {
+  return prisma.document.create({
+    data: { ...data, collectionId },
+  });
+};
