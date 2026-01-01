@@ -8,6 +8,7 @@ import {
 import prisma from "../../shared/db/prisma.js";
 
 import { AppError } from "../../shared/errors/AppError.js";
+import { emitToUser } from "../../realtime/socketServer.js";
 
 export const sendRequest = async (fromId, toId) => {
   if (fromId === toId) {
@@ -19,7 +20,16 @@ export const sendRequest = async (fromId, toId) => {
     throw new AppError("Friend request already sent", 400);
   }
 
-  return createRequest(fromId, toId);
+  const requestCreated = await createRequest(fromId, toId);
+
+  emitToUser(toId, {
+    type: "FRIEND_REQUEST_RECEIVED",
+    payload: {
+      fromUserId: fromId,
+    },
+  });
+
+  return requestCreated;
 };
 
 export const acceptRequest = async (requestId, userId) => {

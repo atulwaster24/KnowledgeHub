@@ -13,6 +13,7 @@ import { logger } from "../../config/logger.js";
 import { AppError } from "../../shared/errors/AppError.js";
 import { supabase } from "../../shared/storage/supabase.js";
 import { enqueuePdfProcessing } from "../../jobs/worker.js";
+import { emitToUser } from "../../realtime/socketServer.js";
 
 const hasAccess = (collection, userId) => {
   if (collection.ownerId === userId) return "OWNER";
@@ -62,7 +63,14 @@ export const shareWithFriend = async (
   if (!collection || collection.ownerId !== ownerId) {
     throw new AppError("Forbidden", 403);
   }
-  return upsertShare(collectionId, userId, access);
+  const share = upsertShare(collectionId, userId, access);
+
+  emitToUser(userId, {
+    type: "COLLECTION_SHARED",
+    payload: { collectionId },
+  });
+
+  return share;
 };
 
 export const uploadDocument = async (
