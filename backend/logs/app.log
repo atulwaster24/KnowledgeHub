@@ -671,3 +671,124 @@
 {"level":"info","message":"Server is running on port 5000","timestamp":"2025-12-31T06:56:04.588Z"}
 {"level":"info","message":"Server is running on port 5000","timestamp":"2025-12-31T06:56:20.524Z"}
 {"level":"info","message":"Server is running on port 5000","timestamp":"2025-12-31T06:57:54.853Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-12-31T07:06:27.562Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-12-31T07:15:42.736Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-12-31T07:16:31.025Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-12-31T07:17:59.849Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-12-31T07:19:30.139Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-12-31T07:20:10.053Z"}
+{"level":"info","message":"Login successful for user with email test@example.com","timestamp":"2025-12-31T07:21:25.717Z"}
+{"durationMs":638,"level":"info","message":"Request completed","method":"POST","path":"/auth/login","status":200,"time":"2025-12-31T07:21:25.733Z","timestamp":"2025-12-31T07:21:25.733Z"}
+{"level":"error","message":"supabase is not defined -","path":"/collections/documents/aab7b4ed-d415-4b87-a0a3-980b29c0b487/download","stack":"ReferenceError: supabase is not defined\n    at getSignedDocumentUrl (file:///D:/Development/knowledgeHub/backend/src/modules/content/content.service.js:103:27)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async downloadDocument (file:///D:/Development/knowledgeHub/backend/src/modules/content/content.controller.js:91:20)","statusCode":500,"timestamp":"2025-12-31T07:21:45.588Z"}
+{"durationMs":155,"level":"info","message":"Request completed","method":"GET","path":"/collections/documents/aab7b4ed-d415-4b87-a0a3-980b29c0b487/download","status":500,"time":"2025-12-31T07:21:45.617Z","timestamp":"2025-12-31T07:21:45.618Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-12-31T07:22:16.033Z"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'replace') -","path":"/collections/documents/aab7b4ed-d415-4b87-a0a3-980b29c0b487/download","stack":"TypeError: Cannot read properties of undefined (reading 'replace')\n    at StorageFileApi._getFinalPath (file:///D:/Development/knowledgeHub/backend/node_modules/@supabase/storage-js/dist/index.mjs:1147:35)\n    at StorageFileApi.createSignedUrl (file:///D:/Development/knowledgeHub/backend/node_modules/@supabase/storage-js/dist/index.mjs:736:23)\n    at getSignedDocumentUrl (file:///D:/Development/knowledgeHub/backend/src/modules/content/content.service.js:106:6)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async downloadDocument (file:///D:/Development/knowledgeHub/backend/src/modules/content/content.controller.js:91:20)","statusCode":500,"timestamp":"2025-12-31T07:22:18.413Z"}
+{"durationMs":160,"level":"info","message":"Request completed","method":"GET","path":"/collections/documents/aab7b4ed-d415-4b87-a0a3-980b29c0b487/download","status":500,"time":"2025-12-31T07:22:18.417Z","timestamp":"2025-12-31T07:22:18.417Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-12-31T07:23:07.801Z"}
+{"level":"error","message":"Failed to generate download link, please try again -","path":"/collections/documents/aab7b4ed-d415-4b87-a0a3-980b29c0b487/download","stack":"Error: Failed to generate download link, please try again\n    at getSignedDocumentUrl (file:///D:/Development/knowledgeHub/backend/src/modules/content/content.service.js:109:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async downloadDocument (file:///D:/Development/knowledgeHub/backend/src/modules/content/content.controller.js:91:20)","statusCode":500,"timestamp":"2025-12-31T07:23:11.621Z"}
+{"durationMs":1689,"level":"info","message":"Request completed","method":"GET","path":"/collections/documents/aab7b4ed-d415-4b87-a0a3-980b29c0b487/download","status":500,"time":"2025-12-31T07:23:11.654Z","timestamp":"2025-12-31T07:23:11.654Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-12-31T07:23:36.304Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-12-31T07:23:54.861Z"}
+{"__isStorageError":true,"level":"error","message":"Failed to generate download link, please try again Object not found","name":"StorageApiError","stack":"StorageApiError: Object not found\n    at file:///D:/Development/knowledgeHub/backend/node_modules/@supabase/storage-js/dist/index.mjs:166:10\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","status":400,"statusCode":"404","timestamp":"2025-12-31T07:23:57.927Z"}
+{"level":"error","message":"Failed to generate download link, please try again -","path":"/collections/documents/aab7b4ed-d415-4b87-a0a3-980b29c0b487/download","stack":"Error: Failed to generate download link, please try again\n    at getSignedDocumentUrl (file:///D:/Development/knowledgeHub/backend/src/modules/content/content.service.js:114:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async downloadDocument (file:///D:/Development/knowledgeHub/backend/src/modules/content/content.controller.js:91:20)","statusCode":500,"timestamp":"2025-12-31T07:23:57.934Z"}
+{"durationMs":639,"level":"info","message":"Request completed","method":"GET","path":"/collections/documents/aab7b4ed-d415-4b87-a0a3-980b29c0b487/download","status":500,"time":"2025-12-31T07:23:57.959Z","timestamp":"2025-12-31T07:23:57.959Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-12-31T07:24:29.625Z"}
+{"level":"error","message":"Uncaught Exception SUPABASE_BUCKET not configured correctly.","stack":"Error: SUPABASE_BUCKET not configured correctly.\n    at Multipart.<anonymous> (file:///D:/Development/knowledgeHub/backend/src/shared/utils/streamUpload.js:58:15)\n    at Multipart.emit (node:events:508:28)\n    at HeaderParser.cb (D:\\Development\\knowledgeHub\\backend\\node_modules\\busboy\\lib\\types\\multipart.js:358:14)\n    at HeaderParser.push (D:\\Development\\knowledgeHub\\backend\\node_modules\\busboy\\lib\\types\\multipart.js:162:20)\n    at SBMH.ssCb [as _cb] (D:\\Development\\knowledgeHub\\backend\\node_modules\\busboy\\lib\\types\\multipart.js:394:37)\n    at feed (D:\\Development\\knowledgeHub\\backend\\node_modules\\streamsearch\\lib\\sbmh.js:248:10)\n    at SBMH.push (D:\\Development\\knowledgeHub\\backend\\node_modules\\streamsearch\\lib\\sbmh.js:104:16)\n    at Multipart._write (D:\\Development\\knowledgeHub\\backend\\node_modules\\busboy\\lib\\types\\multipart.js:567:19)\n    at writeOrBuffer (node:internal/streams/writable:570:12)\n    at _write (node:internal/streams/writable:499:10)","timestamp":"2025-12-31T07:26:15.900Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-12-31T07:27:33.675Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-12-31T07:27:45.288Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-12-31T07:28:16.671Z"}
+{"durationMs":2573,"level":"info","message":"Request completed","method":"POST","path":"/collections/143bba73-0972-4235-9708-e440f4b2f1d8/documents/upload","status":201,"time":"2025-12-31T07:28:21.452Z","timestamp":"2025-12-31T07:28:21.454Z"}
+{"level":"error","message":"Document not found -","path":"/collections/documents/aab7b4ed-d415-4b87-a0a3-980b29c0b487/download","stack":"Error: Document not found\n    at getSignedDocumentUrl (file:///D:/Development/knowledgeHub/backend/src/modules/content/content.service.js:95:19)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async downloadDocument (file:///D:/Development/knowledgeHub/backend/src/modules/content/content.controller.js:91:20)","statusCode":404,"timestamp":"2025-12-31T07:29:04.944Z"}
+{"durationMs":79,"level":"info","message":"Request completed","method":"GET","path":"/collections/documents/aab7b4ed-d415-4b87-a0a3-980b29c0b487/download","status":404,"time":"2025-12-31T07:29:04.949Z","timestamp":"2025-12-31T07:29:04.949Z"}
+{"durationMs":1812,"level":"info","message":"Request completed","method":"GET","path":"/collections/documents/d59a2873-56df-44b1-9d5d-245d3833b2fe/download","status":200,"time":"2025-12-31T07:29:17.337Z","timestamp":"2025-12-31T07:29:17.338Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-12-31T08:24:00.681Z"}
+{"level":"info","message":"Login successful for user with email test@example.com","timestamp":"2025-12-31T08:24:11.386Z"}
+{"durationMs":521,"level":"info","message":"Request completed","method":"POST","path":"/auth/login","status":200,"time":"2025-12-31T08:24:11.399Z","timestamp":"2025-12-31T08:24:11.400Z"}
+{"level":"error","message":"Invalid or expired token -","path":"/collections/143bba73-0972-4235-9708-e440f4b2f1d8/documents/upload","stack":"Error: Invalid or expired token\n    at requireAuth (file:///D:/Development/knowledgeHub/backend/src/shared/middlewares/requireAuth.js:24:11)\n    at Layer.handleRequest (D:\\Development\\knowledgeHub\\backend\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (D:\\Development\\knowledgeHub\\backend\\node_modules\\router\\lib\\route.js:157:13)\n    at Route.dispatch (D:\\Development\\knowledgeHub\\backend\\node_modules\\router\\lib\\route.js:117:3)\n    at handle (D:\\Development\\knowledgeHub\\backend\\node_modules\\router\\index.js:435:11)\n    at Layer.handleRequest (D:\\Development\\knowledgeHub\\backend\\node_modules\\router\\lib\\layer.js:152:17)\n    at D:\\Development\\knowledgeHub\\backend\\node_modules\\router\\index.js:295:15\n    at param (D:\\Development\\knowledgeHub\\backend\\node_modules\\router\\index.js:600:14)\n    at param (D:\\Development\\knowledgeHub\\backend\\node_modules\\router\\index.js:610:14)\n    at processParams (D:\\Development\\knowledgeHub\\backend\\node_modules\\router\\index.js:664:3)","statusCode":401,"timestamp":"2025-12-31T08:25:02.843Z"}
+{"durationMs":13,"level":"info","message":"Request completed","method":"POST","path":"/collections/143bba73-0972-4235-9708-e440f4b2f1d8/documents/upload","status":401,"time":"2025-12-31T08:25:02.851Z","timestamp":"2025-12-31T08:25:02.851Z"}
+{"level":"info","message":"Job enqueued","payload":{"documentId":"f68d9109-97ee-4747-9c0f-8b45dc972631","fileKey":"pdfs/46fe89ff-1471-400b-a171-654dfb82ad25.pdf"},"timestamp":"2025-12-31T08:25:13.199Z","type":"PROCESS_PDF"}
+{"documentId":"f68d9109-97ee-4747-9c0f-8b45dc972631","fileKey":"pdfs/46fe89ff-1471-400b-a171-654dfb82ad25.pdf","level":"info","message":"Started PDF processing job","timestamp":"2025-12-31T08:25:13.201Z"}
+{"durationMs":3574,"level":"info","message":"Request completed","method":"POST","path":"/collections/143bba73-0972-4235-9708-e440f4b2f1d8/documents/upload","status":201,"time":"2025-12-31T08:25:13.204Z","timestamp":"2025-12-31T08:25:13.204Z"}
+{"documentId":"f68d9109-97ee-4747-9c0f-8b45dc972631","level":"info","message":"Finished PDF processing job","timestamp":"2025-12-31T08:25:14.216Z"}
+{"level":"info","message":"Job completed","timestamp":"2025-12-31T08:25:14.218Z","type":"PROCESS_PDF"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-12-31T08:27:15.130Z"}
+{"level":"info","message":"Job enqueued","payload":{"documentId":"1fd37c48-1719-4380-ad70-d46363fac1b3","fileKey":"pdfs/5a672f7b-fdce-40ce-842c-4a19aa681be8.pdf"},"timestamp":"2025-12-31T08:27:23.066Z","type":"PROCESS_PDF"}
+{"documentId":"1fd37c48-1719-4380-ad70-d46363fac1b3","fileKey":"pdfs/5a672f7b-fdce-40ce-842c-4a19aa681be8.pdf","level":"info","message":"Started PDF processing job","timestamp":"2025-12-31T08:27:23.068Z"}
+{"durationMs":4132,"level":"info","message":"Request completed","method":"POST","path":"/collections/143bba73-0972-4235-9708-e440f4b2f1d8/documents/upload","status":201,"time":"2025-12-31T08:27:23.084Z","timestamp":"2025-12-31T08:27:23.084Z"}
+{"documentId":"1fd37c48-1719-4380-ad70-d46363fac1b3","fileKey":"pdfs/5a672f7b-fdce-40ce-842c-4a19aa681be8.pdf","level":"info","message":"Finished PDF processing job","timestamp":"2025-12-31T08:27:33.077Z"}
+{"level":"info","message":"Job completed","timestamp":"2025-12-31T08:27:33.078Z","type":"PROCESS_PDF"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-12-31T08:27:57.019Z"}
+{"level":"info","message":"Job enqueued","payload":{"documentId":"22182e39-5b7c-4337-bc62-5c15ecb31710","fileKey":"pdfs/4a57ed2b-47fd-4c16-9db1-63c6b223917b.pdf"},"timestamp":"2025-12-31T08:28:02.003Z","type":"PROCESS_PDF"}
+{"documentId":"22182e39-5b7c-4337-bc62-5c15ecb31710","fileKey":"pdfs/4a57ed2b-47fd-4c16-9db1-63c6b223917b.pdf","level":"info","message":"Started PDF processing job","timestamp":"2025-12-31T08:28:02.022Z"}
+{"durationMs":4090,"level":"info","message":"Request completed","method":"POST","path":"/collections/143bba73-0972-4235-9708-e440f4b2f1d8/documents/upload","status":201,"time":"2025-12-31T08:28:02.071Z","timestamp":"2025-12-31T08:28:02.071Z"}
+{"documentId":"22182e39-5b7c-4337-bc62-5c15ecb31710","fileKey":"pdfs/4a57ed2b-47fd-4c16-9db1-63c6b223917b.pdf","level":"info","message":"Finished PDF processing job","timestamp":"2025-12-31T08:28:22.040Z"}
+{"level":"info","message":"Job completed","timestamp":"2025-12-31T08:28:22.041Z","type":"PROCESS_PDF"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-12-31T10:14:23.307Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-12-31T10:15:00.013Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-12-31T10:17:22.207Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-12-31T10:18:37.278Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-12-31T10:19:37.809Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-12-31T10:19:39.231Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-12-31T10:20:10.492Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-12-31T10:29:27.453Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-12-31T10:30:03.497Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-12-31T10:30:27.423Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-12-31T10:32:42.145Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-12-31T10:32:44.722Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-12-31T10:33:27.373Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-12-31T10:35:13.203Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-12-31T10:36:01.577Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-12-31T10:37:37.687Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-12-31T10:38:48.921Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-12-31T10:40:25.310Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-12-31T10:41:17.395Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-12-31T10:44:30.852Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-12-31T10:45:03.177Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-12-31T10:45:20.610Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-12-31T10:45:37.758Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-12-31T10:49:06.415Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2026-01-01T06:42:03.988Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2026-01-01T06:45:51.402Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2026-01-01T06:46:20.188Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2026-01-01T06:46:22.063Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2026-01-01T06:48:08.785Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2026-01-01T06:49:31.183Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2026-01-01T06:50:00.547Z"}
+{"durationMs":17,"level":"info","message":"Request completed","method":"GET","path":"/","status":404,"time":"2026-01-01T06:50:37.164Z","timestamp":"2026-01-01T06:50:37.165Z"}
+{"durationMs":3,"level":"info","message":"Request completed","method":"GET","path":"/","status":404,"time":"2026-01-01T06:50:49.448Z","timestamp":"2026-01-01T06:50:49.449Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2026-01-01T06:57:08.171Z"}
+{"durationMs":10,"level":"info","message":"Request completed","method":"GET","path":"/","status":200,"time":"2026-01-01T06:57:09.010Z","timestamp":"2026-01-01T06:57:09.010Z"}
+{"durationMs":3,"level":"info","message":"Request completed","method":"GET","path":"/favicon.ico","status":404,"time":"2026-01-01T06:57:09.274Z","timestamp":"2026-01-01T06:57:09.274Z"}
+{"durationMs":3,"level":"info","message":"Request completed","method":"GET","path":"/health","status":304,"time":"2026-01-01T07:00:13.575Z","timestamp":"2026-01-01T07:00:13.575Z"}
+{"durationMs":1,"level":"info","message":"Request completed","method":"GET","path":"/.well-known/appspecific/com.chrome.devtools.json","status":404,"time":"2026-01-01T07:00:18.747Z","timestamp":"2026-01-01T07:00:18.747Z"}
+{"durationMs":2,"level":"info","message":"Request completed","method":"GET","path":"/health","status":304,"time":"2026-01-01T07:01:06.170Z","timestamp":"2026-01-01T07:01:06.170Z"}
+{"durationMs":2,"level":"info","message":"Request completed","method":"GET","path":"/.well-known/appspecific/com.chrome.devtools.json","status":404,"time":"2026-01-01T07:01:18.877Z","timestamp":"2026-01-01T07:01:18.877Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2026-01-01T07:07:47.800Z"}
+{"level":"info","message":"Login successful for user with email test@example.com","timestamp":"2026-01-01T07:07:51.627Z"}
+{"durationMs":895,"level":"info","message":"Request completed","method":"POST","path":"/auth/login","status":200,"time":"2026-01-01T07:07:51.650Z","timestamp":"2026-01-01T07:07:51.651Z"}
+{"durationMs":5,"level":"info","message":"Request completed","method":"GET","path":"/health","status":304,"time":"2026-01-01T07:08:30.044Z","timestamp":"2026-01-01T07:08:30.045Z"}
+{"durationMs":2,"level":"info","message":"Request completed","method":"GET","path":"/","status":304,"time":"2026-01-01T07:08:32.477Z","timestamp":"2026-01-01T07:08:32.477Z"}
+{"durationMs":4,"level":"info","message":"Request completed","method":"GET","path":"/.well-known/appspecific/com.chrome.devtools.json","status":404,"time":"2026-01-01T07:08:35.144Z","timestamp":"2026-01-01T07:08:35.144Z"}
+{"level":"info","message":"Login successful for user with email test2@example.com","timestamp":"2026-01-01T07:08:53.760Z"}
+{"durationMs":292,"level":"info","message":"Request completed","method":"POST","path":"/auth/login","status":200,"time":"2026-01-01T07:08:53.763Z","timestamp":"2026-01-01T07:08:53.763Z"}
+{"level":"info","message":{"userId":"ba57675c-cbd2-4998-aff1-f4b6d4c5618b"},"timestamp":"2026-01-01T07:09:33.710Z"}
+{"level":"info","message":{"userId":"9e02f94c-f237-4074-a3b9-50a58de9345f"},"timestamp":"2026-01-01T07:09:43.463Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2026-01-01T07:10:58.644Z"}
+{"level":"info","message":{"userId":"9e02f94c-f237-4074-a3b9-50a58de9345f"},"timestamp":"2026-01-01T07:11:18.489Z"}
+{"level":"info","message":{"userId":"ba57675c-cbd2-4998-aff1-f4b6d4c5618b"},"timestamp":"2026-01-01T07:11:24.764Z"}
+{"durationMs":391,"level":"info","message":"Request completed","method":"POST","path":"/friends/request","status":500,"time":"2026-01-01T07:14:07.343Z","timestamp":"2026-01-01T07:14:07.343Z"}
+{"durationMs":67,"level":"info","message":"Request completed","method":"POST","path":"/friends/request","status":400,"time":"2026-01-01T07:16:05.366Z","timestamp":"2026-01-01T07:16:05.366Z"}
+{"durationMs":78,"level":"info","message":"Request completed","method":"POST","path":"/friends/request","status":500,"time":"2026-01-01T07:16:25.245Z","timestamp":"2026-01-01T07:16:25.245Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2026-01-01T07:18:01.327Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2026-01-01T07:18:13.053Z"}
+{"durationMs":346,"level":"info","message":"Request completed","method":"POST","path":"/friends/request","status":400,"time":"2026-01-01T07:18:17.191Z","timestamp":"2026-01-01T07:18:17.192Z"}
+{"level":"error","message":"receiverId is not defined","stack":"ReferenceError: receiverId is not defined\n    at sendRequest (file:///D:/Development/knowledgeHub/backend/src/modules/friends/friend.service.js:25:14)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async send (file:///D:/Development/knowledgeHub/backend/src/modules/friends/friends.controller.js:12:20)","timestamp":"2026-01-01T07:18:42.918Z"}
+{"durationMs":113,"level":"info","message":"Request completed","method":"POST","path":"/friends/request","status":500,"time":"2026-01-01T07:18:42.924Z","timestamp":"2026-01-01T07:18:42.924Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2026-01-01T07:20:20.477Z"}
+{"durationMs":487,"level":"info","message":"Request completed","method":"POST","path":"/friends/request","status":201,"time":"2026-01-01T07:20:33.015Z","timestamp":"2026-01-01T07:20:33.016Z"}
+{"level":"info","message":{"userId":"ba57675c-cbd2-4998-aff1-f4b6d4c5618b"},"timestamp":"2026-01-01T07:20:54.723Z"}
+{"level":"info","message":{"userId":"9e02f94c-f237-4074-a3b9-50a58de9345f"},"timestamp":"2026-01-01T07:20:58.410Z"}
+{"durationMs":82,"level":"info","message":"Request completed","method":"POST","path":"/friends/request","status":201,"time":"2026-01-01T07:21:29.411Z","timestamp":"2026-01-01T07:21:29.411Z"}
+{"level":"info","message":{"userId":"9e02f94c-f237-4074-a3b9-50a58de9345f"},"timestamp":"2026-01-01T07:21:45.551Z"}
+{"level":"info","message":{"userId":"ba57675c-cbd2-4998-aff1-f4b6d4c5618b"},"timestamp":"2026-01-01T07:21:46.971Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2026-01-01T07:27:42.872Z"}

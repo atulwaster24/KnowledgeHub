@@ -1,11 +1,10 @@
-import { success } from "zod";
 import { logger } from "../../config/logger.js";
 
 export const errorHandler = (err, req, res, next) => {
   const statusCode = err.statusCode || 500;
 
   if (statusCode >= 500) {
-    req.logger?.error(err);
+    logger?.error(err);
   }
 
   res.status(statusCode).json({
