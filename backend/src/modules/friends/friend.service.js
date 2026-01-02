@@ -9,6 +9,7 @@ import prisma from "../../shared/db/prisma.js";
 
 import { AppError } from "../../shared/errors/AppError.js";
 import { emitToUser } from "../../realtime/socketServer.js";
+import { delCache, getCache, setCache } from "../../shared/cache/cache.js";
 
 export const sendRequest = async (fromId, toId) => {
   if (fromId === toId) {
@@ -36,12 +37,22 @@ export const acceptRequest = async (requestId, userId) => {
   const request = await prisma.friendRequest.findUnique({
     where: { id: requestId },
   });
+
   if (!request || request.receiverId !== userId) {
     throw new AppError("Unauthorized", 403);
   }
 
-  return updateStatus(requestId, "ACCEPTED");
+  const updated = await updateStatus(requestId, "ACCEPTED");
+
+  // 🔥 Cache invalidation (critical)
+  await Promise.all([
+    delCache(`friends:${request.requesterId}`),
+    delCache(`friends:${request.receiverId}`)
+  ]);
+
+  return updated;
 };
+
 
 export const rejectRequest = async (requestId, userId) => {
   const request = await prisma.friendRequest.findUnique({
@@ -51,7 +62,14 @@ export const rejectRequest = async (requestId, userId) => {
     throw new AppError("Unauthorized", 403);
   }
 
-  return updateStatus(requestId, "REJECTED");
+  const updated = updateStatus(requestId, "REJECTED");
+
+  await Promise.all([
+    delCache(`friends:${request.requesterId}`),
+    delCache(`friends:${request.receiverId}`)
+  ])
+
+  return updated;
 };
 
 export const listIncomingRequests = (userId) => {
@@ -59,9 +77,15 @@ export const listIncomingRequests = (userId) => {
 };
 
 export const listFriends = async (userId) => {
-  const records = await getFriends(userId);
+  const cacheKey = `friends:${userId}`;
 
-  return records.map((r) =>
-    r.requesterId === userId ? r.receiver : r.requester
+  const cached = await getCache(cacheKey);
+  if (cached) return cached;
+
+  const friends = await getFriends(userId);
+  await setCache(cacheKey, friends, 120);
+
+  return friends.map((f) =>
+    f.requesterId === userId ? f.receiver : f.requester
   );
 };
