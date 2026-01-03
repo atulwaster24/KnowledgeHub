@@ -1,3 +1,4 @@
+import { getCache, setCache } from "../../shared/cache/cache.js";
 import {
   sendRequest,
   acceptRequest,
@@ -49,8 +50,16 @@ export const incoming = async (req, res, next) => {
 
 export const friends = async (req, res, next) => {
   try {
-    const data = await listFriends(req.user.id);
-    res.json({ success: true, data });
+    const userId = req.user.id;
+    const cacheKey = `friends:${userId}`;
+
+    const cached = await getCache(cacheKey);
+    if (cached) return res.json(cached);
+
+    const friends = await listFriends(userId);
+
+    await setCache(cacheKey, friends, 120);
+    res.json(friends);
   } catch (error) {
     next(error);
   }

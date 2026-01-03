@@ -815,3 +815,40 @@
 {"level":"info","message":"Server is running on port 5000","timestamp":"2026-01-01T14:10:03.683Z"}
 {"durationMs":240,"level":"info","message":"Request completed","method":"GET","path":"/friends/","status":200,"time":"2026-01-01T14:10:05.215Z","timestamp":"2026-01-01T14:10:05.215Z"}
 {"durationMs":107,"level":"info","message":"Request completed","method":"POST","path":"/friends/request","status":201,"time":"2026-01-01T14:11:54.296Z","timestamp":"2026-01-01T14:11:54.296Z"}
+{"durationMs":3,"level":"info","message":"Request completed","method":"POST","path":"/friends/accept/e483985b-e4ae-4b19-a6b8-9a2812cad9dc","status":401,"time":"2026-01-01T14:13:07.324Z","timestamp":"2026-01-01T14:13:07.324Z"}
+{"level":"info","message":"Login successful for user with email test2@example.com","timestamp":"2026-01-01T14:13:16.510Z"}
+{"durationMs":270,"level":"info","message":"Request completed","method":"POST","path":"/auth/login","status":200,"time":"2026-01-01T14:13:16.514Z","timestamp":"2026-01-01T14:13:16.514Z"}
+{"durationMs":3,"level":"info","message":"Request completed","method":"GET","path":"/friends/incoming","status":401,"time":"2026-01-01T14:13:55.600Z","timestamp":"2026-01-01T14:13:55.600Z"}
+{"level":"info","message":"Login successful for user with email test2@example.com","timestamp":"2026-01-01T14:14:04.227Z"}
+{"durationMs":232,"level":"info","message":"Request completed","method":"POST","path":"/auth/login","status":200,"time":"2026-01-01T14:14:04.230Z","timestamp":"2026-01-01T14:14:04.230Z"}
+{"durationMs":28,"level":"info","message":"Request completed","method":"GET","path":"/friends/incoming","status":200,"time":"2026-01-01T14:14:14.101Z","timestamp":"2026-01-01T14:14:14.102Z"}
+{"durationMs":94,"level":"info","message":"Request completed","method":"POST","path":"/friends/accept/e483985b-e4ae-4b19-a6b8-9a2812cad9dc","status":200,"time":"2026-01-01T14:14:28.641Z","timestamp":"2026-01-01T14:14:28.641Z"}
+{"durationMs":64,"level":"info","message":"Request completed","method":"GET","path":"/users/9e02f94c-f237-4074-a3b9-50a58de9345f","status":404,"time":"2026-01-01T14:15:42.856Z","timestamp":"2026-01-01T14:15:42.856Z"}
+{"durationMs":64,"level":"info","message":"Request completed","method":"GET","path":"/users/9e02f94c-f237-4074-a3b9-50a58de9345f","status":404,"time":"2026-01-01T14:15:58.375Z","timestamp":"2026-01-01T14:15:58.375Z"}
+{"durationMs":73,"level":"info","message":"Request completed","method":"GET","path":"/users/testuser","status":200,"time":"2026-01-01T14:16:51.538Z","timestamp":"2026-01-01T14:16:51.538Z"}
+{"durationMs":6,"level":"info","message":"Request completed","method":"GET","path":"/users/testuser","status":200,"time":"2026-01-01T14:17:00.724Z","timestamp":"2026-01-01T14:17:00.724Z"}
+{"durationMs":3,"level":"info","message":"Request completed","method":"GET","path":"/users/testuser","status":200,"time":"2026-01-01T14:17:02.855Z","timestamp":"2026-01-01T14:17:02.855Z"}
+{"durationMs":3,"level":"info","message":"Request completed","method":"GET","path":"/users/testuser","status":200,"time":"2026-01-01T14:17:03.567Z","timestamp":"2026-01-01T14:17:03.567Z"}
+{"durationMs":3,"level":"info","message":"Request completed","method":"GET","path":"/users/testuser","status":200,"time":"2026-01-01T14:17:04.040Z","timestamp":"2026-01-01T14:17:04.040Z"}
+{"durationMs":2,"level":"info","message":"Request completed","method":"GET","path":"/users/testuser","status":200,"time":"2026-01-01T14:17:04.603Z","timestamp":"2026-01-01T14:17:04.603Z"}
+{"durationMs":61,"level":"info","message":"Request completed","method":"GET","path":"/users/test2user","status":404,"time":"2026-01-01T14:17:10.158Z","timestamp":"2026-01-01T14:17:10.158Z"}
+{"durationMs":7,"level":"info","message":"Request completed","method":"GET","path":"/users/test2user","status":404,"time":"2026-01-01T14:17:17.557Z","timestamp":"2026-01-01T14:17:17.557Z"}
+{"durationMs":8,"level":"info","message":"Request completed","method":"GET","path":"/users/test2user","status":404,"time":"2026-01-01T14:17:18.586Z","timestamp":"2026-01-01T14:17:18.586Z"}
+{"durationMs":9,"level":"info","message":"Request completed","method":"GET","path":"/users/test2user","status":404,"time":"2026-01-01T14:17:19.364Z","timestamp":"2026-01-01T14:17:19.364Z"}
+{"durationMs":69,"level":"info","message":"Request completed","method":"GET","path":"/users/testuser2","status":200,"time":"2026-01-01T14:17:34.610Z","timestamp":"2026-01-01T14:17:34.610Z"}
+{"durationMs":3,"level":"info","message":"Request completed","method":"GET","path":"/users/testuser2","status":200,"time":"2026-01-01T14:17:38.348Z","timestamp":"2026-01-01T14:17:38.348Z"}
+{"durationMs":4,"level":"info","message":"Request completed","method":"GET","path":"/users/testuser2","status":200,"time":"2026-01-01T14:17:39.221Z","timestamp":"2026-01-01T14:17:39.221Z"}
+{"durationMs":3,"level":"info","message":"Request completed","method":"GET","path":"/users/testuser2","status":200,"time":"2026-01-01T14:17:39.612Z","timestamp":"2026-01-01T14:17:39.612Z"}
+{"durationMs":2,"level":"info","message":"Request completed","method":"GET","path":"/users/testuser2","status":200,"time":"2026-01-01T14:17:39.796Z","timestamp":"2026-01-01T14:17:39.796Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2026-01-02T05:51:20.882Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2026-01-02T06:05:19.999Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2026-01-02T06:06:19.386Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2026-01-02T06:06:25.093Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2026-01-02T06:08:51.094Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2026-01-02T08:28:02.690Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2026-01-03T05:28:19.442Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2026-01-03T05:28:24.530Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2026-01-03T05:29:30.861Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2026-01-03T05:44:07.950Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2026-01-03T05:48:38.308Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2026-01-03T05:48:44.114Z"}

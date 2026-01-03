@@ -8,8 +8,8 @@ import {
 import prisma from "../../shared/db/prisma.js";
 
 import { AppError } from "../../shared/errors/AppError.js";
-import { emitToUser } from "../../realtime/socketServer.js";
-import { delCache, getCache, setCache } from "../../shared/cache/cache.js";
+import { emitEvent } from "../../events/eventBus.js";
+import { EVENTS } from "../../events/eventTypes.js";
 
 export const sendRequest = async (fromId, toId) => {
   if (fromId === toId) {
@@ -23,12 +23,7 @@ export const sendRequest = async (fromId, toId) => {
 
   const requestCreated = await createRequest(fromId, toId);
 
-  emitToUser(toId, {
-    type: "FRIEND_REQUEST_RECEIVED",
-    payload: {
-      fromUserId: fromId,
-    },
-  });
+  await emitEvent(EVENTS.FRIEND_REQUEST_SENT, { fromId, toId });
 
   return requestCreated;
 };
@@ -44,11 +39,10 @@ export const acceptRequest = async (requestId, userId) => {
 
   const updated = await updateStatus(requestId, "ACCEPTED");
 
-  // 🔥 Cache invalidation (critical)
-  await Promise.all([
-    delCache(`friends:${request.requesterId}`),
-    delCache(`friends:${request.receiverId}`)
-  ]);
+  await emitEvent(EVENTS.FRIEND_REQUEST_ACCEPTED, {
+    requesterId: request.requesterId,
+    receiverId: request.receiverId
+  })
 
   return updated;
 };
@@ -64,10 +58,10 @@ export const rejectRequest = async (requestId, userId) => {
 
   const updated = updateStatus(requestId, "REJECTED");
 
-  await Promise.all([
-    delCache(`friends:${request.requesterId}`),
-    delCache(`friends:${request.receiverId}`)
-  ])
+  await emitEvent(EVENTS.FRIEND_REQUEST_REJECTED, {
+    requesterId: request.requesterId,
+    receiverId: request.receiverId
+  })
 
   return updated;
 };
@@ -77,13 +71,7 @@ export const listIncomingRequests = (userId) => {
 };
 
 export const listFriends = async (userId) => {
-  const cacheKey = `friends:${userId}`;
-
-  const cached = await getCache(cacheKey);
-  if (cached) return cached;
-
   const friends = await getFriends(userId);
-  await setCache(cacheKey, friends, 120);
 
   return friends.map((f) =>
     f.requesterId === userId ? f.receiver : f.requester

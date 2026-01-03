@@ -14,6 +14,8 @@ import { AppError } from "../../shared/errors/AppError.js";
 import { supabase } from "../../shared/storage/supabase.js";
 import { enqueuePdfProcessing } from "../../jobs/worker.js";
 import { emitToUser } from "../../realtime/socketServer.js";
+import { emitEvent } from "../../events/eventBus.js";
+import { EVENTS } from "../../events/eventTypes.js";
 
 const hasAccess = (collection, userId) => {
   if (collection.ownerId === userId) return "OWNER";
@@ -65,10 +67,8 @@ export const shareWithFriend = async (
   }
   const share = upsertShare(collectionId, userId, access);
 
-  emitToUser(userId, {
-    type: "COLLECTION_SHARED",
-    payload: { collectionId },
-  });
+
+  emitEvent(EVENTS.COLLECTION_SHARED, { userId, collectionId });
 
   return share;
 };
@@ -95,10 +95,12 @@ export const uploadDocument = async (
     fileKey,
   });
 
-  enqueuePdfProcessing({
+  emitEvent(EVENTS.DOCUMENT_UPLOADED, {
     documentId: doc.id,
+    collectionId,
+    ownerId: collection.ownerId,
     fileKey: doc.fileKey
-  })
+  });
 
   return doc;
 };

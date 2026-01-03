@@ -12,6 +12,11 @@ import contentRoutes from "./modules/content/content.routes.js";
 import { apiLimiter, authLimiter } from "./shared/middlewares/rateLimit.js";
 import { correlationId } from "./shared/middlewares/correlationId.js";
 
+
+import "./events/handlers/friend.handlers.js";
+import "./events/handlers/content.handlers.js";
+
+
 const app = express();
 app.use(express.json());
 app.use(cookieParser());
